@@ -1,0 +1,145 @@
+html,
+body {
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #0545a3;
+  --main-color2: red;
+  --main-color3: black;
+}
+
+/* header */
+
+.header {
+  min-height: 60vh;
+  background: url("../img/BACKGROUND.jpg") center center no-repeat;
+  background-size: cover;
+}
+/* navbar */
+.navbar {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.navbar .navbar-brand {
+  letter-spacing: 0.3rem;
+  font-size: 1.8rem;
+  background: -webkit-linear-gradient(360deg, purple, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar .nav-link {
+  color: var(--main-color);
+  letter-spacing: 0.2rem;
+}
+
+.navbar .active {
+  text-decoration: none;
+  color: red !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--main-color3);
+}
+
+/* hero */
+.hero-text {
+  font-size: 1.5rem;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--main-color3);
+}
+.section-title {
+  font-size: 2rem;
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.skills div {
+  min-width: 30%;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* About me */
+.about-me {
+  background: linear-gradient(#f7f4d3, #fffac3);
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--main-color3);
+  position: relative;
+}
+
+/* recent project */
+.project1 {
+  background: linear-gradient(90deg, #f6fc8e, #fffac3);
+}
+.project2 {
+  background: linear-gradient(#f7f4d3, #fffac3);
+}
+.project3 {
+  background: linear-gradient(90deg, #f6fc8e, #fffac3);
+}
+.contact {
+  background-color: #252525;
+  color: white;
+}
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.contact-list {
+  font-size: 2rem;
+}
+.contact-list a {
+  text-decoration: none;
+  color: white !important;
+}
+.contact-list div {
+  margin-bottom: 0.6rem;
+}
+.navbar1 {
+  position: fixed;
+  z-index: 999;
+  background-color: white;
+  color: var(--main-color3);
+}
+footer {
+  position: relative;
+}
+
+#go-up {
+  position: fixed;
+  background: red;
+  color: white;
+  font-size: 1.5rem;
+  z-index: 999;
+  bottom: 50px;
+  right: 50px;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 5px 5px 10px grey;
+}
