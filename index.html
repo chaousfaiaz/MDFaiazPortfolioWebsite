@@ -304,6 +304,53 @@ also helped me develop time management skills, communication skills as well as t
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"
       ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/GLTFLoader.js"></script>
+    <script>
+        // Step 1: Set up scene, camera, and renderer
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Step 2: Add a light to the scene
+        var light = new THREE.AmbientLight(0x404040);  // Ambient light
+        scene.add(light);
+
+        // Step 3: Load the dinosaur model
+        var loader = new THREE.GLTFLoader();
+        loader.load('dinosaur.glb', function(gltf) {
+            var dinosaur = gltf.scene;
+            dinosaur.scale.set(0.5, 0.5, 0.5);  // Adjust the size of the dinosaur
+            dinosaur.position.set(0, -1, 0);   // Position the dinosaur slightly below the ground level
+            scene.add(dinosaur);
+
+            // Step 4: Set the camera position
+            camera.position.z = 5;
+
+            // Step 5: Render the scene with the loaded model
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotate the dinosaur for effect
+                dinosaur.rotation.y += 0.01;
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        }, undefined, function(error) {
+            console.error('An error occurred while loading the dinosaur model:', error);
+        });
+
+        // Step 6: Adjust camera and resize handling
+        window.addEventListener('resize', function() {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
     </footer>
   </body>
 </html>
